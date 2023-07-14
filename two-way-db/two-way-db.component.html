@@ -1,0 +1,31 @@
+<!--  
+    <p>two-way-db works!</p>
+-->
+<h4>-------------------------------------------------------------------------------</h4>
+<table class="mainTable" width="900">
+    <tr><td align="center">
+<h3>Two way databinding Assignment</h3>
+<table class="inputTable" >
+   <tr> <td><label>First Name:</label></td><td><input type="text" [(ngModel)]="firstName"></td></tr>
+   <tr> <td><label> Last Name:</label></td><td><input type="text" [(ngModel)]="lastName"></td></tr>
+   <tr> <td><label> Dept:</label></td><td><input type="text" [(ngModel)]="dept"></td></tr>
+   <tr> <td><label> Salary:</label></td><td><input type="text" [(ngModel)]="salary"></td></tr>
+   
+</table>
+</td> </tr>
+
+<tr><td>
+<table class="resultTable" align="center">
+    <tr><td><br> <p>You have entered: <br>{{firstName}} &nbsp;&nbsp;{{lastName}} &nbsp;&nbsp;{{dept}} &nbsp;&nbsp;{{salary}} &nbsp;&nbsp;</p>
+        <button (click)="clearValue()">Clear</button></td></tr>
+
+</table>
+</td> </tr>
+</table>
+
+
+
+
+
+
+

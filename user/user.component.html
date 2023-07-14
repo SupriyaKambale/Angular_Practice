@@ -1,0 +1,17 @@
+<p>user works!</p>
+
+<form #empForm="ngForm" (ngSubmit)="parentFunction(empForm.value)">
+    <table class="P2C" align="center"> 
+      <tr ><td class="P2CForm">Employee name:</td><td><input type="text"  ngModel name="ename" placeholder="Enter name"></td></tr>
+      <tr><td class="P2CForm">Age:</td><td><input type="text" name="age"ngModel  placeholder="Enter age"></td></tr>
+      <tr><td class="P2CForm">Department:</td><td><input type="text" ngModel name="dept" placeholder="Enter department"></td></tr>
+      <tr><td class="P2CForm">Salary:</td><td><input type="text" ngModel name="salary" placeholder="Enter salary"></td></tr>
+      <tr><td class="P2CForm"></td>
+        <td><button>Submit data</button>
+     
+        <button (click)="clear()">Clear</button></td></tr>
+    </table>
+    </form>
+    
+
+<button (click)="sendData()">Send Data to Parent</button>

@@ -1,0 +1,38 @@
+<p>template-driven-form-asmnt works!</p>
+<p>{{str1}}</p>
+<p>{{sbstr2}}</p>
+<p>{{splt}}</p>
+
+<form class="login-form"  #loginform="ngForm">
+  Enter Email:
+    
+        
+        <input matInput type="email" 
+        name="email" 
+        ngModel 
+        #email="ngModel" 
+        required email 
+        placeholder="email" >
+        <div *ngIf="email.errors?.domainstr">Domain is incorrect.</div>
+       
+   
+    
+       
+    
+    
+     <button [disabled]="!loginform.valid" mat-raised-button color="primary" (click)="login(loginform)">Login</button>
+</form>
+
+<div class="form-val">{{loginform.value|json}}</div>
+
+
+
+
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+    <div class="col-md-6 rounded shadow py-4">
+   <h2>Form Data</h2>
+   <p>Email: <strong>{{ipdomainstr}}</strong></p>
+      
+    </div>
+  </div>
+

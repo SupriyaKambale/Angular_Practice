@@ -1,0 +1,141 @@
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center" >
+  <h1>
+    Welcome to {{ title }}! {{ name }}
+    <!-- <div>Test data</div> -->
+  </h1>
+
+  <!-- 
+    
+  <h1>Employee Count: {{ empCount }}</h1>
+  <h3>{{data.name}}</h3>
+  <h3>{{data.dept}}</h3>
+  <h3>Addition of 3 and 2: {{3+2}}</h3>
+  <h3>Substraction of 3 and 2: {{3- 2}}</h3>
+  <h3>Today's Date and time: {{currentTime()}} </h3>
+  <img [src]="imageUrl" alt="nature image loading" height="300" width="500">
+  <div [innerHTML]="varTest"></div>
+
+  <hr>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+  <hr>
+  <app-test2 [child]="parentToChild">Please check the output in console. Parent to child data passing.</app-test2>
+  
+  <table class="flowerTable"><th colspan=4>Parent to child data passing: Passing Array</th>
+    <tr>
+   <td><app-card [img]="flowers[0].img" [title]="flowers[0].title" [content]="flowers[0].content" [link]="flowers[0].link  "></app-card>
+  </td>
+  <td><app-card [img]="flowers[1].img"  [title]="flowers[1].title" [content]="flowers[1].content" [link]="flowers[1].link"></app-card>
+</td>
+<td><app-card [img]="flowers[2].img"  [title]="flowers[2].title" [content]="flowers[2].content" [link]="flowers[2].link"></app-card>
+</td>
+<td><app-card [img]="flowers[3].img"  [title]="flowers[3].title" [content]="flowers[3].content" [link]="flowers[3].link"></app-card>
+</td>
+</tr></table>
+
+  <hr>
+  <app-test></app-test> <br>
+  <app-event-binding-test></app-event-binding-test>
+  <app-two-way-db></app-two-way-db>
+  <hr>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<hr>
+<p appCustom>Change background color using custom directives: Green</p>
+<hr>
+<p appMyRedDirective>Change background color using custom directives: Red</p>
+<button (click)="testNew()">Output Decorator ex_save</button>
+<app-test2 [child]="parentToChild" (fromChild)="onParent($event)"></app-test2>
+
+
+<app-user (parentFunction)="parentFunction($event)"></app-user>
+
+
+<table class="P2C" align="center"> 
+  <tr ><td class="label">Employee name:</td><td>{{ename}}</td></tr>
+  <tr><td class="label">Age:</td><td>{{age}}</td></tr>
+  <tr><td class="label">Department:</td><td>{{dept}}</td></tr>
+  <tr><td class="label">Salary:</td><td>{{salary}}</td></tr>
+</table>
+<hr>
+<app-child-to-parent-object-pass [child]="parentToChild" (objFromChild)="onParent($event)"></app-child-to-parent-object-pass>
+
+
+-->
+<app-ngfor></app-ngfor>
+<!-- <app-countrystatedrp></app-countrystatedrp> -->
+<!-- <app-ngif></app-ngif> -->
+<app-ngifex></app-ngifex>
+<hr>
+
+<app-ngswitch></app-ngswitch>
+<hr>
+<app-ngstyle></app-ngstyle>
+
+
+<hr>
+<hr>
+<!-- <app-templateform></app-templateform>
+<app-template-driven-form-asmnt></app-template-driven-form-asmnt> -->
+<hr>
+<app-reactiveform></app-reactiveform>
+
+<hr>
+
+
+<header> 
+<nav>
+  <ul class="nav nav-tabs">
+    <!-- <li class="nav-item"><a href="/aboutus" class="nav-link">about us</a></li>
+    <li class="nav-item"><a href="/contactus" class="nav-link">contact us</a></li> 
+  <h4>Problem is <a> tag href will refresh whole page so to avoid that we need to use routerlink</h4>
+  -->
+  <li class="nav-item"><a routerLinkActive="active" routerLink="/home" class="nav-link">Home</a></li>
+ 
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/aboutus" class="nav-link">about us</a></li>
+    <li class="nav-item"><a routerLinkActive="active"  routerLink="/contactus" class="nav-link">contact us</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/product" class="nav-link">Products</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/post" class="nav-link">Post</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/movie" class="nav-link">Movie</a></li>
+    <li class="nav-item"><a routerLinkActive="active" routerLink="/templateform" class="nav-link">Template Form Login</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+<router-outlet></router-outlet>
+
+<!-- routing links will display after router outlet tag in the page -->
+
+
+  <!-- <br><button (click)="save()"> Click me</button> -->
+<!--  
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+-->
+
+

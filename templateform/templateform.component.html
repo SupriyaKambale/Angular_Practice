@@ -1,0 +1,70 @@
+<p>templateform works!</p>
+<mat-card class="Login-page">
+
+<mat-card-title>Login Form(Template Driven)</mat-card-title>
+<mat-card-content>
+    <form class="login-form" #loginform="ngForm">
+        <mat-label>Enter Email:</mat-label>
+        <mat-form-field>
+            
+            <input matInput type="email" 
+            name="email" 
+            ngModel 
+            #email="ngModel" 
+            required email 
+            placeholder="email">
+            <mat-error  *ngIf="email.errors?.required">The email is mandatory.</mat-error>
+           
+        
+        </mat-form-field>
+        
+        <div></div>
+        
+        <mat-label>Enter Password:</mat-label>
+    <mat-form-field>
+        <input matInput type="password" 
+        name="password" 
+        ngModel 
+        #email="ngModel" 
+        required password 
+        placeholder="password">
+        </mat-form-field>
+        <!-- Radio Button Control -->
+     <div class = "form-group" *ngFor = "let gender of genders"> 
+       <input type="radio" id="gender" name="gender" value="{{gender.value}}"
+        [ngModel]="defaultGender" class="custom-control custom-radio"> 
+       <label for="{{gender.id}}">{{gender.value}}</label>
+      
+     </div> 
+ <!-- Dropdown List Control -->
+     <select class = "form-group" name="course"  
+                [ngModel]="defaultCourse"> 
+
+         <option *ngFor = "let course of courses" value="{{course}}">{{course}}</option>
+        
+       
+      </select> 
+
+    
+        
+       <div></div>
+
+         <button [disabled]="!loginform.valid" mat-raised-button color="primary" (click)="login(loginform)">Login</button>
+    </form>
+
+    <div class="form-val">{{loginform.value|json}}</div>
+    
+</mat-card-content>
+</mat-card>
+
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+    <div class="col-md-6 rounded shadow py-4">
+   <h2>Form Data</h2>
+   <p>Email: <strong>{{formData.email}}</strong></p>
+      <p>Password: <strong>{{formData.password}}</strong></p>
+      <p>Course: <strong>{{formData.course}}</strong></p>
+      <p>Gender: <strong>{{formData.gender}}</strong></p>
+    </div>
+  </div>
+
+ 

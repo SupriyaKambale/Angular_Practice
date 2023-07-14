@@ -1,0 +1,30 @@
+.mainTable
+{
+    border: 02cm;
+    
+    background-image: url("https://media.istockphoto.com/id/506293036/photo/lotus-flower-blossom.jpg?s=1024x1024&w=is&k=20&c=oKSNWfAAVFoeFKumrjcdu9MEZRT7h8hEh0EpLFg62Nw=");
+}
+label{
+    font-weight: 80;
+    font-style:normal;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+
+.inputTable{
+    background-image: url("https://t3.ftcdn.net/jpg/04/02/13/40/360_F_402134084_iEz9B72elabe35UWBxvRlemN7PN5Equn.jpg");
+    width: 800;
+  border-color: black;  
+  border-style: solid;
+}
+.resultTable{
+   
+   
+    background-image:url("https://images.unsplash.com/photo-1530982011887-3cc11cc85693?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
+    width: 600;
+    font-weight: 80;
+    font-style:normal;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    
+}
