@@ -1,0 +1,17 @@
+<p>emp1 component  works!</p>
+<div *ngFor="let employee of employees">
+    <div *ngIf="employee.empId=='001'">
+<button type="button" class="btn btn-success" (click)="display()">Display {{employee.empName}} data</button>
+<div  class="table table-striped table-dark"  *ngIf="isSubmitted==true">Data as below:
+   <table  > 
+    <tr><td>Employee ID:</td><td><strong>{{employee.empId}}</strong></td></tr>
+    <tr><td>Employee Name:</td><td><strong>{{employee.empName}}</strong></td></tr>
+    <tr><td>Salary:</td><td><strong>{{employee.salary}}</strong></td></tr>
+    <tr><td>Department:</td><td><strong>{{employee.dept}}</strong></td></tr>
+    <tr><td>Designation:</td><td><strong>{{employee.designation}}</strong></td></tr>
+
+
+</table>
+</div>
+</div>
+</div>
