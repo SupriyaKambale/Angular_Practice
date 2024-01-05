@@ -1,0 +1,10 @@
+<p>card1 works!</p>
+<div *ngFor="let product of products">
+    <div *ngIf="product.name=='Laptop'">
+<button type="button" class="btn btn-success" (click)="print()">Subscribe {{product.name}}</button>
+            <div *ngIf="isSubmitted==true">
+                    <p>Product Name:{{product.name}}</p>
+<p>Product Id:{{product.id}}</p>
+</div>
+</div>
+</div>

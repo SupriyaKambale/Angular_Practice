@@ -1,0 +1,90 @@
+<p>reactive-form-assmnt works!</p>
+<div class="container">
+    <div class="row justify-content-md-center"> 
+        <div class="col-md-6 shadow rounded py-4">
+            <h3>Reactive Form Assignment1</h3>
+           
+            <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+                <table>
+                    <tr>
+                <div class="form-group" >
+                   
+                    <td><label for="email">Email:</label></td>
+                    <td> <input type="email" formControlName="email" id="email" class="form-control" >
+                    <small class="text-danger"  *ngIf=" ! myReactiveForm.get('email').valid &&  myReactiveForm.get('email').touched "  >Email should not be blank.</small>
+                    <small class="text-danger"  *ngIf="  myReactiveForm.get('email').errors?.pattern ">Please enter valid email address.</small>
+                </td>
+               
+                </div>
+            </tr>
+            
+                <tr>
+               <div class="form-group">
+                <td><label for="subscription">subscription:</label></td>
+            <td>
+                <select class="form-control" formControlName="subscription" id="subscription">
+                  
+                        <option *ngFor="let subscriptions of subscription" value="{{subscriptions}}">{{subscriptions}}</option>
+                </select>
+                <small class="text-danger"  *ngIf="  myReactiveForm.get('subscription').errors?.required ">Please select course.</small>
+            </td>  
+               </div>
+            </tr>
+            <tr>
+
+               <div class="form-group">
+            <td>
+                <label for="password">Password:</label></td>
+            <td>
+            <input type="password" formControlName="password" id="password" class="form-control">
+           <small class="text-danger" *ngIf="myReactiveForm.get('password').touched && myReactiveForm.get('password').errors?.required">Password cannot be blank.</small>
+        </td></div>
+                </tr>
+        <tr>
+        <div class="form-group">
+        <td>
+                <label for="date">Date:</label></td>
+            <td>
+                <input type="date" formControlName="date" id="date" class="form-control" value="{{myReactiveForm.get('date').value}}">
+                <small class="text-danger" *ngIf="myReactiveForm.get('date').touched && myReactiveForm.get('date').value <=currDate">Date must be greater than today's date.</small>
+            </td></div>
+    </tr>
+    <tr>
+        <div class="formgroup" formArrayName="skills">
+
+           <td> <label>Skills</label></td>
+           <td>
+            <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+
+                <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+
+                
+
+            </ng-container>
+
+            
+
+            <button class="btn btn-light btn-small mt-4 btn-add" (click)="OnAddSkills()"><i>+</i>Add Skills</button>
+
+        </td>
+
+        </div>
+    </tr>
+    </table>
+                <div><button type="submit" class="btn btn-primary" [disabled]="!myReactiveForm.valid">Submit</button></div> 
+            </form>
+
+                <div class="row justify-content-md-center" *ngIf="isSubmitted"> 
+                    <div class="col-md-6 shadow rounded py-4">
+                        <h3>Form Data</h3>
+                        <p>Email:<strong>{{myReactiveForm.get('email').value}}</strong></p>
+                        <p>Subscription:<strong>{{myReactiveForm.get('subscription').value}}</strong></p>
+                        <p>Password:<strong>{{myReactiveForm.get('password').value}}</strong></p>
+                        <p>Date:<strong>{{myReactiveForm.get('date').value}}</strong></p>
+                        <hr>
+                   
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<p>display-products works!</p>
+
+
+
+
+<button type="button" (click)="print()">Display data.</button>
+<div *ngIf="isCLicked==true">
+    <div *ngFor="let item of data">
+
+{{item.Id}}
+{{item.Name}}
+{{item.Salary}}
+</div>
+<hr>
+<div *ngFor="let item of products">
+
+    {{item.id}}
+    {{item.name}}
+   
+    </div>
+</div>
+       
+          
+      
+

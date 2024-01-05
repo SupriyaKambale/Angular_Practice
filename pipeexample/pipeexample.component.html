@@ -1,0 +1,19 @@
+<p>pipeexample works!</p>
+
+<div>
+    <p> Today's Date:{{this.todaysDate}}</p>
+    <p> Transformed Date:{{this.todaysDate | date}}</p>
+    <p> Transformed Date:{{this.todaysDate | date}}</p>
+    <p> Short Date:{{this.todaysDate | date :'shortDate'}}</p>
+    <p> Full Date:{{this.todaysDate | date :'fullDate'}}</p>
+    <p> Hours:{{this.todaysDate | date: 'HH'}}</p>
+    <p> UPPERCASE Date:{{this.todaysDate | date :'fullDate' |uppercase}}</p>
+    <hr>
+    <p>Currency Pipe Demo ------Price{{'55000' | currency:'INR' }}</p>
+    <p>Currency Pipe Demo ------Price{{'55000' | currency:'USD' }}</p>
+    <p>Currency Pipe Demo ------Price{{'55000' | currency:'EUR' }}</p>
+ 
+    <div> <h3>Jason string pipe</h3>
+        <p>{{employee | json}}</p>
+        <p>{{countLenght | custom}}</p>
+</div>

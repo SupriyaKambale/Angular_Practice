@@ -1,0 +1,29 @@
+<p>product-filter works!</p>
+
+<div class="row Justify-content-center">
+   <div class="col-md-8">
+        <label for="search">Search By Product</label>
+        <input type="text" class="form-control" [(ngModel)]="namesearch" placeholder="Enter product Name">
+   </div>
+   <div class="col-md-8">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of ProductArr| search:namesearch">
+                    <th  scope="row">{{product.sno}} </th>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.availability}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   </div>
+</div>
